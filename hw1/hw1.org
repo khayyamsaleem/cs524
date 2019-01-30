@@ -1,0 +1,50 @@
+#+TITLE: CS524 Homework #1
+#+STARTUP: noindent showall
+#+OPTIONS: toc:nil num:nil
+#+LaTeX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LaTeX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \renewcommand{\Large}{\small}
+#+LATEX_HEADER: \usepackage[table]{xcolor}
+#+LaTeX_HEADER: \setlength\parindent{0pt}
+
+
+* (1) Using the formulae for the first software business model, find the year where the cumulative support expense equals that of the initial licensing fee $p$, where $p = \textdollar 12000$ per user and $c = 0.40$. In how many years will the initial cost of software become $5\%$ of the overall expenditure?
+
+#+ATTR_LaTeX: :align c|c
+| *Part 1*               | *Part 2*                    |
+|------------------------+-----------------------------|
+| $np = npmc$            | $np = (0.05)np(1 + mc)$     |
+| $1 = mc$               | $1 = (0.05)(1 + (m)(0.40))$ |
+| $m = \frac{1}{0.40}$   | $20 = 1 + (m)(0.40)$        |
+| $m = \bold{2}$ *years* | $19 = m(0.40)$              |
+|                        | $m = \frac{19}{0.40}$       |
+|                        | $m = \bold{47.5}$ *years*   |
+
+* (2) In the definition of /Hybrid Cloud/, a term "cloud bursting" is mentioned. Search the Web for its definitions. Do these definitions agree? If so, provide what you think is the best definition (you can rephrase as you see fit). If not, explain the differences between the definitions.
+
+#+ATTR_LaTeX: :align c|p{8cm}
+|                                                      | <30>                           |
+| *Source*                                             | *Definition*                   |
+|------------------------------------------------------+--------------------------------|
+| [[https://azure.microsoft.com/en-us/overview/what-is-cloud-bursting/][Azure Docs]]                                           | a configuration that’s set up between a private cloud and a public cloud to deal with peaks in IT demand |
+|------------------------------------------------------+--------------------------------|
+| \cellcolor{yellow!5} [[https://www.service-architecture.com/articles/cloud-computing/cloud_bursting.html][Blog About Service Architecture]] | \cellcolor{yellow!5} if a situation arises where the application needs additional resources, it can "burst" into the public cloud and use Cloud Computing for those additional resources. |
+|------------------------------------------------------+--------------------------------|
+| [[https://www.upwork.com/hiring/development/is-cloud-bursting-right-for-you/][Upwork Article]]                                       | allows an organization to rent additional storage and compute resources on demand |
+
+These definitions do agree, and the best definition in my opinion is the *second*, because it provides both the definition AND the reason why one might want to implement cloud bursting into their application.
+
+* (3) What are the essential differences between the /public/ and /private/ cloud that have made CIOs worry about the legal consequences of Shadow IT? Read the original text of the US government acts mentioned in the text (HIPAA and SOX) and summarize each in one paragraph.
+- /Private cloud/ is provisioned for exclusive use by a single organization comprising multiple consumers, such as different units of the business. /Public cloud/ is provisioned for open use by the general public. With /Shadow IT/, CIOs lose control over personnel, and introduce security risks into their system because their data becomes replicated in the Cloud. True private clouds can limit the ability of developers to use the tools and resources they need, but public clouds leave the company vulnerable to the risks that Shadow IT without internal controls and supervision introduces.
+- /HIPAA/, or the US Health Insurance Portability and Accountability Act, was a government act designed to implement national standards for the protection of health care information. It enforces a "privacy rule" that aims to strike a balance between protecting the healthcare information of an individual and allowing the flow of health information needed to promote high-quality health care and preserve the public health. It applies to health plans, health care providers, and health care clearing houses. It protects any individually identifiable health information, but does not restrict the use of de-identified health information. The act also details the multitude of penalties imposed upon violators of the act, depending on the severity of the unlawful disclosure.
+- /SOX/, or the Sarbanes-Oxley Act, sets standards for all US public companies' boards and accounting firms. It was part of the government's response to a number of corporate and accounting scandals such as those of Enron and WorldCom. It covers the responsibilities imposed upon the board of directors of publicly held companies, and gives the SEC the power to impose additional restrictions and regulations on these companies. The responsibilities of the boards and accounting firms include producing accurate financial disclosures, preventing the manipulation of audits, and reporting on the adequacy of the internal accounting controls (such as determining fraud risk, tracing the flow of internal transactions, etc). 
+  
+* Consider the case of /Instagram/ as described in the textbook. How many employees and customers did it have at the time of the purchase by Facebook? How much did Facebook pay for it? What was the value that the purchased business has generated in the first two years, and what were the factors that enabled generating this value?
+At the time that it was purchased by Facebook, Instagram has eleven employees that were managing thirty million customers.\\
+Facebook paid one billion dollars for the company.\\
+In the first two years, the company generated one billion dollars in value.\\
+It was able to generate so much in so little time because the operating cost was so low; there were no physical servers to maintain, there were no technicians required for the administration of the servers, there was no capital expense required. The company had no physical infrastructure, and only three employees of the eleven were managing the infrastructure through the Amazon Cloud. They had almost no investment in people or infrastructure, so they were able to direct most of their capital toward customer acquisition and retention.
+
+* (5) Familiarize yourself with the [[https://aws.amazon.com/ec2/][description of /Amazon Elastic Cloud Computing/]]. What kind of service model does it provide (i.e. SaaS, PaaS, IaaS, or a combination of these). Please list the features that support your answer.
+Amazon Elastic Cloud Computing is a service that provides dynamic scaling of computing capacity depending on the needs of the consumer. It can scale both up (to react to increasing demand) or down (to reduce costs when there is a decrease in demand).\\
+The service follows the IaaS model most closely. IaaS provides the consumer the capability to provision processing, storage, networks, and other fundamental computing resources so that the consumer can deploy and run arbitrary software, without having to control and manage the underlying cloud infrastructure. AWS has distributed services and elastic scaling, for provisioning processing power dynamically. They provide complete control so that consumers can deploy and run arbitrary software, leverage network capabilities, as well as create users with different roles. It is inexpensive and has varied pricing, allowing the consumer to only pay for the infrastructure that they use.
