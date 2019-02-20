@@ -1,0 +1,20 @@
+#+TITLE: CS524 Homework #2
+#+STARTUP: noindent showall
+#+OPTIONS: toc:nil num:nil
+#+LaTeX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LaTeX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \renewcommand{\Large}{\small}
+#+LATEX_HEADER: \usepackage[table]{xcolor}
+#+LaTeX_HEADER: \setlength\parindent{0pt}
+
+* (1) Complete reading Chapter 3 of the textbook and the lecture materials. **Please note the errata: The references to [19] on p. 56 of the book should be replaced with references to [20]**! Please also read [20] (available free [[https://www.kernel.org/doc/ols/2007/ols2007v2-pages-87-96.pdf][here]]).
+- [[color:green][Done]]
+  
+* (2) Explain the advantage that paravirtualization provides for handling timers in virtual machines.
+- Paravirtualization is advantageous for handling timers in virtual machines in that it can change the virtual machine code to request a notification at a specified time. This eliminates the need to schedule timer interrupts for idle machines; a practice that is not scalable. Modern operation systems rely on clock interrupts to keep their internal timers for real-time media processing, forcing even idle virtual machines to process the clock interrupts.
+  
+* (3) Explain how paravirtualization helps in minimizing access to APIC.
+Access to the APIC is an expensive operation in virtual mode, because it requires transitions into and out of the hypervisor. 
+
+----------
+**[[color:red][I realized I don't need this to graduate and I've got a lot of stuff going on so I'm dropping this course.]]**
